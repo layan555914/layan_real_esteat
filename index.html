@@ -1,470 +1,252 @@
-HTML
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAYAN | ليان للتنازلات العقارية</title>
-<style>
-:root {
-  --navy: #071a35;
-  --blue: #1677d2;
-  --gold: #d8b15a;
-  --red: #e53945;
-  --white: #ffffff;
-  --bg: #f4f6fa;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--navy);
-}
-header {
-  background: linear-gradient(135deg,#06152c,#102c50);
-  color: white;
-  padding: 22px 16px 30px;
-  border-bottom: 4px solid var(--gold);
-}
-.top {
-  max-width: 1050px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.logo {
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: #fff;
-}
-.logo span { color: #43a5ff; }
-.logo small {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 0;
-  color: var(--gold);
-  margin-top: 5px;
-}
-.tag {
-  background: var(--red);
-  padding: 10px 14px;
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: bold;
-}
-.hero {
-  max-width: 1050px;
-  margin: 28px auto 0;
-}
-.hero h1 {
-  font-size: clamp(25px,5vw,39px);
-  margin: 0 0 12px;
-  line-height: 1.5;
-}
-.hero h1 span { color: var(--gold); }
-.hero p {
-  line-height: 2;
-  color: #d7e2f0;
-  margin: 0;
-}
-main {
-  max-width: 1050px;
-  margin: auto;
-  padding: 22px 14px 45px;
-}
-.actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
-}
-button, .button {
-  border: 0;
-  padding: 13px 17px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-}
-.primary { background: var(--red); color: white; }
-.secondary { background: var(--navy); color: white; }
-.section-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-.section-title h2 { margin: 0; font-size: 22px; }
-.section-title span { color: #65758b; font-size: 13px; }
-.filters {
-  display: flex;
-  gap: 9px;
-  margin-bottom: 18px;
-  flex-wrap: wrap;
-}
-input, select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #d5dce7;
-  border-radius: 8px;
-  background: white;
-  font: inherit;
-  min-width: 0;
-}
-.filters input { flex: 2; min-width: 150px; }
-.filters select { flex: 1; min-width: 125px; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 16px;
-}
-.card {
-  background: white;
-  border-radius: 13px;
-  overflow: hidden;
-  border: 1px solid #e1e6ef;
-  box-shadow: 0 5px 17px #0b214008;
-}
-.photo {
-  height: 165px;
-  background: linear-gradient(135deg,#dce6f2,#a9bfd7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #314c6c;
-  font-size: 15px;
-  overflow: hidden;
-}
-.photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.card-body { padding: 16px; }
-.card h3 { margin: 0 0 9px; font-size: 18px; }
-.location { color: #6c7788; font-size: 13px; }
-.price {
-  color: #a47b20;
-  font-size: 19px;
-  font-weight: bold;
-  margin: 15px 0;
-}
-.details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9px;
-  font-size: 12px;
-  line-height: 1.8;
-}
-.detail {
-  padding: 9px;
-  background: #f4f6fa;
-  border-radius: 7px;
-}
-.detail b { display: block; color: var(--navy); }
-.status {
-  display: inline-block;
-  margin-top: 13px;
-  background: #fff0f0;
-  color: #c52b35;
-  padding: 6px 9px;
-  border-radius: 5px;
-  font-size: 12px;
-}
-.contact {
-  display: block;
-  text-align: center;
-  background: var(--navy);
-  color: white;
-  padding: 12px;
-  border-radius: 7px;
-  margin-top: 14px;
-  text-decoration: none;
-}
-.empty {
-  text-align: center;
-  padding: 35px 15px;
-  color: #65758b;
-  background: white;
-  border-radius: 10px;
-}
-.form-box {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 30px;
-  border-top: 3px solid var(--gold);
-}
-.form-box h2 { margin-top: 0; }
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 12px;
-}
-label {
-  display: block;
-  font-size: 13px;
-  font-weight: bold;
-  margin-bottom: 7px;
-}
-.field { margin-bottom: 14px; }
-.full { grid-column: 1 / -1; }
-.hint {
-  font-size: 12px;
-  color: #68788c;
-  line-height: 1.8;
-}
-footer {
-  background: #06152c;
-  color: #d5deeb;
-  text-align: center;
-  padding: 23px 15px;
-  font-size: 12px;
-  line-height: 2;
-}
-</style>
-</head>
-<body>
-<header>
-  <div class="top">
-    <div class="logo">LA<span>Y</span>AN
-      <small>للتنازلات العقارية</small>
-    </div>
-    <div class="tag">فرصتك العقارية تبدأ هنا</div>
-  </div>
-  <div class="hero">
-    <h1>امتلك وحدتك العقارية<br><span>بطريقة تناسب إمكانياتك</span></h1>
-    <p>اكتشف عروض التنازل عن الوحدات العقارية في محافظة أسيوط، وقارن المقدم والأقساط المتبقية ورسوم التنازل قبل اتخاذ قرارك.</p>
-  </div>
-</header>
-
-<main>
-  <div class="actions">
-    <button class="primary" onclick="document.getElementById('offerForm').scrollIntoView({behavior:'smooth'})">＋ أضف عرضك العقاري</button>
-    <button class="secondary" onclick="document.getElementById('offers').scrollIntoView({behavior:'smooth'})">تصفح العروض</button>
-  </div>
-
-  <section id="offers">
-    <div class="section-title">
-      <h2>العروض العقارية</h2>
-      <span id="count">0 عروض</span>
-    </div>
-    <div class="filters">
-      <input id="search" placeholder="ابحث عن منطقة أو مشروع..." oninput="renderOffers()">
-      <select id="type" onchange="renderOffers()">
-        <option value="">كل الوحدات</option>
-        <option>شقة</option>
-        <option>محل تجاري</option>
-        <option>أرض</option>
-        <option>فيلا</option>
-      </select>
-      <select id="area" onchange="renderOffers()">
-        <option value="">كل المناطق</option>
-        <option>مدينة أسيوط</option>
-        <option>أسيوط الجديدة</option>
-        <option>ديروط</option>
-        <option>منفلوط</option>
-        <option>القوصية</option>
-        <option>أبو تيج</option>
-        <option>الفتح</option>
-        <option>الغنايم</option>
-        <option>صدفا</option>
-        <option>البداري</option>
-        <option>ساحل سليم</option>
-      </select>
-    </div>
-    <div id="offerList" class="grid"></div>
-  </section>
-
-  <section class="form-box" id="offerForm">
-    <h2>أضف عرض تنازل عقاري</h2>
-    <p class="hint">أدخل بيانات الوحدة بدقة. يجب مراجعة العرض وشروط التنازل مع الشركة المطورة قبل إتمام أي اتفاق.</p>
-    <form id="newOffer" class="form-grid">
-      <div class="field">
-        <label for="title">اسم المشروع أو الوحدة *</label>
-        <input id="title" required placeholder="مثال: شقة في مشروع ...">
-      </div>
-      <div class="field">
-        <label for="unitType">نوع الوحدة *</label>
-        <select id="unitType" required>
-          <option value="">اختر النوع</option>
-          <option>شقة</option><option>محل تجاري</option>
-          <option>أرض</option><option>فيلا</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="unitArea">المنطقة *</label>
-        <select id="unitArea" required>
-          <option value="">اختر المنطقة</option>
-          <option>مدينة أسيوط</option><option>أسيوط الجديدة</option>
-          <option>ديروط</option><option>منفلوط</option>
-          <option>القوصية</option><option>أبو تيج</option>
-          <option>الفتح</option><option>الغنايم</option>
-          <option>صدفا</option><option>البداري</option>
-          <option>ساحل سليم</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="paid">المبلغ المدفوع بالجنيه *</label>
-        <input id="paid" type="number" min="0" required placeholder="مثال: 350000">
-      </div>
-      <div class="field">
-        <label for="remaining">الأقساط المتبقية بالجنيه *</label>
-        <input id="remaining" type="number" min="0" required placeholder="مثال: 600000">
-      </div>
-      <div class="field">
-        <label for="asking">المطلوب من المشتري بالجنيه *</label>
-        <input id="asking" type="number" min="0" required placeholder="قيمة التنازل المطلوبة">
-      </div>
-      <div class="field">
-        <label for="fee">رسوم التنازل</label>
-        <input id="fee" placeholder="مثال: 5% أو غير محددة">
-      </div>
-      <div class="field">
-        <label for="discount">الخصم من المبلغ المدفوع</label>
-        <input id="discount" placeholder="مثال: لا يوجد أو 20000 جنيه">
-      </div>
-      <div class="field">
-        <label for="company">اسم الشركة المطورة</label>
-        <input id="company" placeholder="اسم الشركة أو المطور">
-      </div>
-      <div class="field">
-        <label for="phone">رقم التواصل *</label>
-        <input id="phone" type="tel" required placeholder="رقم الهاتف">
-      </div>
-      <div class="field full">
-        <label for="photos">صور الوحدة العقارية</label>
-        <input id="photos" type="file" accept="image/*" multiple>
-        <p class="hint">اختيار الصور يعرض معاينة لها داخل العرض في هذه النسخة التجريبية.</p>
-        <div id="preview" class="photo" style="display:none"></div>
-      </div>
-      <div class="field full">
-        <label for="notes">تفاصيل إضافية</label>
-        <textarea id="notes" rows="3" placeholder="الدور، المساحة، التشطيب، وموعد التسليم..."></textarea>
-      </div>
-      <div class="field full">
-        <button class="primary" type="submit">عرض معاينة ونشر محلي</button>
-      </div>
-    </form>
-    <p class="hint">تنبيه: هذه نسخة واجهة تجريبية. العروض لا تُحفظ على خادم ولا تظهر تلقائيًا على أجهزة الآخرين، ورفع الصور حاليًا للمعاينة فقط.</p>
-  </section>
-</main>
-
-<footer>
-  <strong>LAYAN | ليان للتنازلات العقارية</strong>
-  <br>منصة لعرض فرص التنازل عن الوحدات العقارية في محافظة أسيوط.
-  <br>يخضع إتمام التنازل لموافقة الشركة المطورة والإجراءات القانونية اللازمة.
-</footer>
 
 <script>
-const offers = [];
+const SUPABASE_URL = 'https://ebyhwqkmhxbgocngpqfe.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_8PlFI202E-pIZRAG61L2sA_aSoJ3Qwt';
+const BUCKET = 'layan_real_estat';
 
-function esc(value) {
-  return String(value ?? '').replace(/[&<>"']/g, c => ({
-    '&':'&amp;', '<':'&lt;', '>':'&gt;',
-    '"':'&quot;', "'":'&#39;'
-  }[c]));
-}
+const $ = id => document.getElementById(id);
+let offers = [];
 
-function money(value) {
-  return Number(value || 0).toLocaleString('ar-EG') + ' جنيه';
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({
+  '&':'&amp;', '<':'&lt;', '>':'&gt;',
+  '"':'&quot;', "'":'&#39;'
+}[c]));
+
+const money = v =>
+  v === null || v === undefined || v === ''
+    ? 'غير محدد'
+    : Number(v).toLocaleString('ar-EG') + ' جنيه';
+
+function normalize(o) {
+  return {
+    id:o.id,
+    title:o.title || 'وحدة عقارية',
+    type:o.property_type || 'شقة',
+    area:o.city || o.area || '',
+    unitArea:o.area_m2 || '',
+    paid:o.paid_amount ?? 0,
+    remaining:o.remaining_amount ?? 0,
+    asking:o.total_price ?? null,
+    fee:o.assignment_fee ?? '',
+    discount:o.discount_amount ?? '',
+    company:o.developer_name || '',
+    phone:o.contact_phone || '',
+    name:o.contact_name || '',
+    notes:o.description || '',
+    photos:o.image_urls || []
+  };
 }
 
 function renderOffers() {
-  const q = document.getElementById('search').value.trim().toLowerCase();
-  const type = document.getElementById('type').value;
-  const area = document.getElementById('area').value;
+  const q = $('search').value.trim().toLowerCase();
+  const t = $('typeFilter').value;
+  const a = $('areaFilter').value.trim().toLowerCase();
+
   const list = offers.filter(o =>
-    (o.title + ' ' + o.company + ' ' + o.area).toLowerCase().includes(q) &&
-    (!type || o.type === type) &&
-    (!area || o.area === area)
+    (!q || [o.title,o.area,o.company,o.notes]
+      .join(' ').toLowerCase().includes(q)) &&
+    (!t || o.type === t) &&
+    (!a || o.area.toLowerCase().includes(a))
   );
 
-  document.getElementById('count').textContent = list.length + ' عروض';
-
-  document.getElementById('offerList').innerHTML = list.length
+  $('offerList').innerHTML = list.length
     ? list.map(o => `
-      <article class="card">
-        <div class="photo">${
-          o.photos.length
-            ? '<img src="' + o.photos[0] + '" alt="صورة الوحدة">'
-            : '🏢 صورة الوحدة العقارية'
-        }</div>
-        <div class="card-body">
+      <article class="offer">
+        <div class="offer-img">
+          ${o.photos.length
+            ? `<img src="${esc(o.photos[0])}" alt="صورة الوحدة">`
+            : '⌂'}
+        </div>
+        <div class="offer-body">
           <h3>${esc(o.title)}</h3>
-          <div class="location">📍 ${esc(o.area)} · ${esc(o.type)}</div>
-          <div class="price">${money(o.asking)}</div>
-          <div class="details">
-            <div class="detail">المبلغ المدفوع<b>${money(o.paid)}</b></div>
-            <div class="detail">المتبقي<b>${money(o.remaining)}</b></div>
-            <div class="detail">رسوم التنازل<b>${esc(o.fee || 'غير محددة')}</b></div>
-            <div class="detail">الخصم<b>${esc(o.discount || 'غير محدد')}</b></div>
+          <div class="meta">
+            <span class="tag">${esc(o.type)}</span>
+            <span class="tag">${esc(o.area || 'أسيوط')}</span>
+            ${o.unitArea
+              ? `<span class="tag">${esc(o.unitArea)} م²</span>`
+              : ''}
           </div>
-          <p class="hint">الشركة: ${esc(o.company || 'غير محددة')}</p>
-          <p class="hint">${esc(o.notes || '')}</p>
-          <span class="status">الموافقة على التنازل تحتاج إلى التحقق</span>
-          <a class="contact" href="tel:${esc(o.phone)}">التواصل مع صاحب العرض</a>
+          <div class="price">
+            مبلغ التنازل: ${money(o.asking)}
+          </div>
+          <div class="details">
+            <p>المبلغ المدفوع: ${money(o.paid)}</p>
+            <p>المتبقي: ${money(o.remaining)}</p>
+            <p>رسوم التنازل: ${money(o.fee)}</p>
+            <p>الخصم: ${money(o.discount)}</p>
+            ${o.company
+              ? `<p>الشركة: ${esc(o.company)}</p>`
+              : ''}
+            ${o.notes ? `<p>${esc(o.notes)}</p>` : ''}
+          </div>
+          ${o.phone
+            ? `<a class="contact" href="tel:${esc(o.phone)}">اتصل بصاحب العرض</a>`
+            : ''}
         </div>
       </article>
     `).join('')
-    : '<div class="empty">لا توجد عروض مطابقة حاليًا. يمكنك إضافة عرض تجريبي من النموذج.</div>';
+    : '<div class="empty">لا توجد عروض مطابقة حاليًا. يمكنك إضافة عرض جديد من النموذج بالأسفل.</div>';
 }
 
-document.getElementById('photos').addEventListener('change', function() {
-  const preview = document.getElementById('preview');
-  const file = this.files[0];
-  if (!file) {
-    preview.style.display = 'none';
-    preview.innerHTML = '';
+async function loadOffers() {
+  try {
+    const r = await fetch(
+      `${SUPABASE_URL}/rest/v1/property_offers?select=*&status=eq.available&order=created_at.desc`,
+      {
+        headers:{
+          apikey:SUPABASE_KEY,
+          Authorization:`Bearer ${SUPABASE_KEY}`
+        }
+      }
+    );
+
+    if (!r.ok) throw new Error(await r.text());
+
+    offers = (await r.json()).map(normalize);
+    renderOffers();
+  } catch (e) {
+    $('offerList').innerHTML =
+      '<div class="empty">تعذر تحميل العروض. راجع إعدادات قاعدة البيانات.</div>';
+    console.error(e);
+  }
+}
+
+['search','typeFilter','areaFilter'].forEach(id =>
+  $(id).addEventListener('input', renderOffers)
+);
+
+$('photos').addEventListener('change', () => {
+  const files = Array.from($('photos').files);
+  $('preview').innerHTML = '';
+
+  if (files.length > 5) {
+    alert('اختر 5 صور كحد أقصى.');
+    $('photos').value = '';
     return;
   }
-  if (!file.type.startsWith('image/')) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    preview.style.display = 'flex';
-    preview.innerHTML = '<img alt="معاينة الصورة" src="' + reader.result + '">';
-  };
-  reader.readAsDataURL(file);
+
+  for (const f of files) {
+    if (f.size > 5 * 1024 * 1024) {
+      alert('حجم كل صورة يجب ألا يتجاوز 5 ميجابايت.');
+      $('photos').value = '';
+      $('preview').innerHTML = '';
+      return;
+    }
+
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(f);
+    $('preview').appendChild(img);
+  }
 });
 
-document.getElementById('newOffer').addEventListener('submit', function(e) {
+async function uploadPhoto(file) {
+  const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+  const path = `offers/${Date.now()}_${Math.random().toString(36).slice(2)}_${safe}`;
+
+  const r = await fetch(
+    `${SUPABASE_URL}/storage/v1/object/${BUCKET}/${path}`,
+    {
+      method:'POST',
+      headers:{
+        apikey:SUPABASE_KEY,
+        Authorization:`Bearer ${SUPABASE_KEY}`,
+        'Content-Type':file.type,
+        'x-upsert':'false'
+      },
+      body:file
+    }
+  );
+
+  if (!r.ok) throw new Error('تعذر رفع الصور: ' + await r.text());
+
+  return `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${path}`;
+}
+
+$('newOffer').addEventListener('submit', async e => {
   e.preventDefault();
-  const photos = Array.from(document.getElementById('photos').files)
-    .filter(f => f.type.startsWith('image/'))
-    .map(f => URL.createObjectURL(f));
 
-  offers.unshift({
-    title: document.getElementById('title').value,
-    type: document.getElementById('unitType').value,
-    area: document.getElementById('unitArea').value,
-    paid: document.getElementById('paid').value,
-    remaining: document.getElementById('remaining').value,
-    asking: document.getElementById('asking').value,
-    fee: document.getElementById('fee').value,
-    discount: document.getElementById('discount').value,
-    company: document.getElementById('company').value,
-    phone: document.getElementById('phone').value,
-    notes: document.getElementById('notes').value,
-    photos
-  });
+  const btn = $('submitBtn');
+  const status = $('formStatus');
 
-  renderOffers();
-  this.reset();
-  document.getElementById('preview').style.display = 'none';
-  document.getElementById('offers').scrollIntoView({behavior:'smooth'});
-  alert('تمت إضافة العرض إلى المعاينة الحالية فقط. لن يظهر للآخرين قبل ربط الموقع بقاعدة بيانات.');
+  btn.disabled = true;
+  btn.textContent = 'جارٍ النشر...';
+  status.textContent = 'يرجى الانتظار';
+
+  try {
+    const files = Array.from($('photos').files);
+
+    if (files.length > 5) throw new Error('اختر 5 صور كحد أقصى.');
+
+    for (const f of files) {
+      if (f.size > 5 * 1024 * 1024)
+        throw new Error('حجم الصورة أكبر من 5 ميجابايت.');
+    }
+
+    const urls = [];
+    for (const f of files) urls.push(await uploadPhoto(f));
+
+    const feeText = $('fee').value.trim();
+    const feeNumber = feeText.match(/\d+(?:\.\d+)?/);
+    const discountText = $('discount').value.trim();
+    const discountNumber = discountText.match(/\d+(?:\.\d+)?/);
+
+    const record = {
+      title:$('title').value.trim(),
+      governorate:'أسيوط',
+      city:$('city').value.trim(),
+      area:$('city').value.trim(),
+      property_type:$('unitType').value,
+      area_m2:$('unitArea').value ? Number($('unitArea').value) : null,
+      total_price:$('asking').value ? Number($('asking').value) : null,
+      paid_amount:Number($('paid').value),
+      remaining_amount:Number($('remaining').value),
+      assignment_fee:feeNumber ? Number(feeNumber[0]) : null,
+      assignment_fee_percentage:null,
+      discount_amount:discountNumber ? Number(discountNumber[0]) : null,
+      description:$('notes').value.trim(),
+      image_urls:urls,
+      developer_name:$('company').value.trim() || null,
+      contact_name:$('contactName').value.trim() || null,
+      contact_phone:$('phone').value.trim(),
+      status:'available'
+    };
+
+    const r = await fetch(
+      `${SUPABASE_URL}/rest/v1/property_offers`,
+      {
+        method:'POST',
+        headers:{
+          apikey:SUPABASE_KEY,
+          Authorization:`Bearer ${SUPABASE_KEY}`,
+          'Content-Type':'application/json',
+          Prefer:'return=representation'
+        },
+        body:JSON.stringify(record)
+      }
+    );
+
+    if (!r.ok) throw new Error('لم يتم حفظ العرض: ' + await r.text());
+
+    alert('تم نشر العرض بنجاح.');
+    $('newOffer').reset();
+    $('preview').innerHTML = '';
+    await loadOffers();
+    $('offers').scrollIntoView({behavior:'smooth'});
+    status.textContent = '';
+
+  } catch (err) {
+    alert(err.message || 'حدث خطأ أثناء نشر العرض.');
+    status.textContent = 'لم يتم النشر؛ راجع الإعدادات أو حاول مرة أخرى.';
+    console.error(err);
+
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'نشر العرض';
+  }
 });
 
-renderOffers();
+loadOffers();
 </script>
 </body>
 </html>
+
